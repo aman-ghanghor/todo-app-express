@@ -8,7 +8,7 @@ const connectDB = (URL) => {
   mongoose
     .connect(URL, OPTIONS)
     .then(() => {
-      console.log("Connnected Successfully");
+      // console.log("Connnected Successfully");
     })
     .catch((error) => {
       console.log(error);

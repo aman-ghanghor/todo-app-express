@@ -1,6 +1,5 @@
 import UserModel from "../models/userModel.js"
 
-const userid = "62ac4b20f3a500fcd81d0b0d" ;
 
 class TodoController {
 
@@ -8,11 +7,10 @@ class TodoController {
        const user = req.user ;
        try {
            const {todoList} = await UserModel.findOne({_id: user._id}, {todoList: 1}) ;
-           console.log(todoList)
            res.send({status: 'success', data: todoList, message: 'todo list fetched successfully'});
        }
        catch(error) {
-          console.log(error);
+          // console.log(error);
           res.send({status: 'failed', message: 'unable to get todo list'});
        }
     }
@@ -32,7 +30,7 @@ class TodoController {
                 res.send({status: 'success', data: todoList, message: 'addedd successfully'});
             }
             catch(error) {
-                console.log(error);
+                // console.log(error);
                 res.send({status: 'failed', message: 'unable to add into todo list'});
             }
         }
@@ -55,7 +53,7 @@ class TodoController {
                 res.send({status: 'success', data: todoList, message: 'todo item updated successfully'});
             }
             catch(error) {
-                console.log(error);
+                // console.log(error);
                 res.send({status: 'failed', message: 'unable to update into todo item'});
             }
         }
@@ -78,7 +76,7 @@ class TodoController {
                 res.send({status: 'success', data: todoList, message: 'todo item deleted successfully'});
             }
             catch(error) {
-                console.log(error);
+                // console.log(error);
                 res.send({status: 'failed', message: 'unable to add into todo list'});
             }
         }
